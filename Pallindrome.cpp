@@ -34,30 +34,22 @@ public:
     bool isPalindrome(int x)
     {
 
-        /*Mathode - Good*/
-        class Solution
+        if (x < 0)
         {
-        public:
-            bool isPalindrome(int x)
-            {
-                if (x < 0)
-                {
-                    return false;
-                }
+            return false;
+        }
 
-                long long reversed = 0;
-                long long temp = x;
+        long long reversed = 0;
+        long long temp = x;
 
-                while (temp != 0)
-                {
-                    int digit = temp % 10;
-                    reversed = reversed * 10 + digit;
-                    temp /= 10;
-                }
+        while (temp != 0)
+        {
+            int digit = temp % 10;            // 1  || 2  || 1
+            reversed = reversed * 10 + digit; // 1 || 12 || 121
+            temp /= 10;                       // 12  || 1
+        }
 
-                return (reversed == x);
-            }
-        };
+        return (reversed == x);
 
         /* Mathode - GHATIYA
         int rev = 0, num, digit;
