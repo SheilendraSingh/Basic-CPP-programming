@@ -11,7 +11,7 @@ using namespace std;
 class Solution
 {
 public:
-    int removeDuplicates(vector<int> &nums)
+    vector<int> removeDuplicates(vector<int> &nums)
     {
         int fwindex = 1;
         for (int i = 1; i < nums.size(); i++)
@@ -22,7 +22,14 @@ public:
                 fwindex++;
             }
         }
-        return fwindex;
+
+        while (nums.size() > fwindex)
+        {
+            nums.pop_back();
+        }
+
+        cout << fwindex << endl;
+        return nums;
     }
 };
 
@@ -38,14 +45,11 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> j;
-        v.push_back(i);
+        v.push_back(j);
     }
-    cout << "{";
-    for (int a : v)
+    vector<int> result = s1.removeDuplicates(v);
+    for (int nums : result)
     {
-        cout << a << " ";
+        cout << nums;
     }
-
-    cout << "}" << endl
-         << s1.removeDuplicates(v) << endl;
 }
