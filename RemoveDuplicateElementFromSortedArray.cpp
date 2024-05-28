@@ -52,4 +52,5 @@ int main()
     {
         cout << nums;
     }
+    return 0;
 }

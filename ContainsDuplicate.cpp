@@ -33,4 +33,5 @@ int main()
         v.push_back(a);
     }
     cout << s1.containsDuplicate(v);
+    return 0;
 }
